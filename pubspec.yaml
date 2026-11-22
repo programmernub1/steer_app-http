@@ -1,0 +1,29 @@
+name: steer_app
+description: S.T.E.E.R. - Smart Teleoperated ESP32 Educational Robot. Gesture-driven UDP robot controller.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Hand camera preview (Android, iOS, Web)
+  camera: ^0.11.0
+  # Streaming HTTP client used to read the ESP32-CAM MJPEG stream
+  http: ^1.2.2
+  # Persists IP / port / calibration between launches (works on Web too)
+  shared_preferences: ^2.3.2
+
+  # NOTE: UDP uses dart:io's RawDatagramSocket (no extra package needed).
+  # It is unavailable in browsers, so Web automatically uses the mock transport.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
